@@ -11,6 +11,7 @@ public class Fire : MonoBehaviour
     private bool isTouchingWater = false;
     private float remainingHealth;
     int fireCount;
+    IndicatorsController indicators;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,8 @@ public class Fire : MonoBehaviour
         GenerateFire();
 
         UnityEngine.Random.InitState((DateTime.Now.ToString("hh:mm:ss")).GetHashCode());
+        indicators = GameObject.Find("Indicators").GetComponentInChildren<IndicatorsController>();
+
     }
 
     // Update is called once per frame
@@ -50,6 +53,7 @@ public class Fire : MonoBehaviour
         fireCount -= 1;
         if(fireCount == 0)
         {
+            indicators.fireUpdate++;
             Destroy(gameObject);
         }
         else
