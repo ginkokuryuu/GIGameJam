@@ -18,19 +18,19 @@ public class TestingMove : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.A))
         {
-            rb2d.AddForce(new Vector2(-speed, 0f));
+            rb2d.AddForce(new Vector2(-speed * Time.deltaTime, 0f), ForceMode2D.Impulse);
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            rb2d.AddForce(new Vector2(speed, 0f));
+            rb2d.AddForce(new Vector2(speed * Time.deltaTime, 0f), ForceMode2D.Impulse);
         }
         else if (Input.GetKey(KeyCode.S))
         {
-            rb2d.AddForce(new Vector2(0, -speed));
+            rb2d.AddForce(new Vector2(0, -speed * Time.deltaTime), ForceMode2D.Impulse);
         }
         else if (Input.GetKey(KeyCode.W))
         {
-            rb2d.AddForce(new Vector2(0, speed));
+            rb2d.AddForce(new Vector2(0, speed * Time.deltaTime), ForceMode2D.Impulse);
         }
     }
 }
