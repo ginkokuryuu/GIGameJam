@@ -19,7 +19,6 @@ public class Fire : MonoBehaviour
         GenerateFire();
 
         UnityEngine.Random.InitState((DateTime.Now.ToString("hh:mm:ss")).GetHashCode());
-        indicators = GameObject.Find("Indicators").GetComponentInChildren<IndicatorsController>();
 
     }
 
