@@ -11,13 +11,21 @@ public class IndicatorsController : MonoBehaviour
     public int fireUpdate = 0;
     int civStart;
     public int fireStart;
+
+    GameObject popUpClear;
+    PlayerMovement player;
+
+
     void Start()
     {
         GameObject civilians = GameObject.Find("Civilians");
         GameObject fire = GameObject.Find("Fire Spawner");
+        popUpClear = GameObject.Find("PopUpClear");
+        popUpClear.SetActive(false);
         civCount = GameObject.Find("Civ Count").GetComponentInChildren<TMP_Text>();
         fireCount = GameObject.Find("Fire Count").GetComponentInChildren<TMP_Text>();
-    
+        player = GameObject.Find("Player").GetComponent<PlayerMovement>();
+
         civStart = civilians.transform.childCount;
         Debug.Log(civStart + " " + fireStart);
     }
@@ -29,6 +37,8 @@ public class IndicatorsController : MonoBehaviour
 
         if(civUpdate == civStart && fireUpdate == fireStart){
             // level complete
+            player.enabled = false;
+            popUpClear.SetActive(true);
         }
     
     }

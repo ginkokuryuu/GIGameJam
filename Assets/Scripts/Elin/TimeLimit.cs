@@ -9,11 +9,16 @@ public class TimeLimit : MonoBehaviour
     TMP_Text timeStatus;
     Image timeBox;
     public float setTime;
+    GameObject popUpFailed = null;
+    PlayerMovement player;
     void Start()
     {
         timeStatus = GameObject.Find("Timer").GetComponentInChildren<TMP_Text>();
         timeBox = GameObject.Find("Timer Box").GetComponentInChildren<Image>();
         StartCoroutine(reloadTimer(setTime));
+        popUpFailed = GameObject.Find("PopUpFailed");
+        popUpFailed.SetActive(false);
+        player = GameObject.Find("Player").GetComponent<PlayerMovement>();
     }
 
     IEnumerator reloadTimer(float counter)
@@ -41,7 +46,11 @@ public class TimeLimit : MonoBehaviour
         }
 
         if (counter <= 0)
+        {
             timeStatus.text = " Time's Up!";
+            player.enabled = false;
+            popUpFailed.SetActive(true);
+        }
     }
 
     string StringConverter(int time)
