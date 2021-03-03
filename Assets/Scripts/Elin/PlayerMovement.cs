@@ -5,9 +5,9 @@ using System;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed;
+    [SerializeField] private float moveSpeed;
 
-    public Rigidbody2D player;
+    [SerializeField] private Rigidbody2D player;
 
     // public Animator animator;
     Vector2 movement;
@@ -39,16 +39,12 @@ public class PlayerMovement : MonoBehaviour
 
         movement = movement.normalized;
 
+        player.AddForce(movement * moveSpeed * Time.deltaTime, ForceMode2D.Impulse);
+
         // animator.SetFloat("Horizontal", movement.x);
         // animator.SetFloat("Vertical", movement.y);
         // animator.SetFloat("Speed", movement.sqrMagnitude);
 
-    }
-
-    void FixedUpdate()
-    {
-        //Movement
-        player.MovePosition(player.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 
 }
