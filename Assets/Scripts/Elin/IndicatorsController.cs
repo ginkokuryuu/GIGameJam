@@ -10,7 +10,8 @@ public class IndicatorsController : MonoBehaviour
     public int civUpdate = 0;
     public int fireUpdate = 0;
     int civStart;
-    int fireStart;
+    int fireStart = 0;
+    FireSpawner fireSpawner;
     void Start()
     {
         GameObject civilians = GameObject.Find("Civilians");
@@ -19,18 +20,23 @@ public class IndicatorsController : MonoBehaviour
         fireCount = GameObject.Find("Fire Count").GetComponentInChildren<TMP_Text>();
     
         civStart = civilians.transform.childCount;
-        fireStart = fire.transform.childCount;
-        Debug.Log(civStart + " " + fireStart);
+
+        foreach (Transform child in fire.transform){
+            if(child.gameObject.activeSelf){
+                fireStart++;
+            }
+        }
     }
 
     void Update()
     {
         civCount.text = civUpdate.ToString() + " / " + civStart.ToString();
         fireCount.text = fireUpdate.ToString() + " / " + fireStart.ToString();
+
+        if(civUpdate == civStart && fireUpdate == fireStart){
+            // level complete
+        }
+    
     }
 
-    string StringConverter(int count)
-    {
-        return count.ToString();
-    }
 }

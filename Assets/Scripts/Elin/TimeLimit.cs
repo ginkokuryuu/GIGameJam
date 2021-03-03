@@ -29,10 +29,10 @@ public class TimeLimit : MonoBehaviour
 
             if (counter <= 10)
             {
-                timeBox.color = new Color32(250, 145, 22, 250);
+                timeBox.color = new Color32(250, 145, 22, 200);
                 if (counter <= 5)
                 {
-                    timeBox.color = new Color32(172, 26, 26, 250);
+                    timeBox.color = new Color32(172, 26, 26, 200);
                 }
             }
 
