@@ -7,37 +7,52 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
 
-    [SerializeField] private Rigidbody2D player;
+    private Rigidbody2D player;
+    [SerializeField] private SpriteRenderer sprite;
+
+    private Animator animator;
+    private bool isMoving = false;
 
     // public Animator animator;
     Vector2 movement;
     Vector2 defaultPosition;
 
+    private void Start()
+    {
+        player = GetComponent<Rigidbody2D>();
+        animator = sprite.gameObject.GetComponent<Animator>();
+    }
+
     void Update()
     {
-        // x < 0 -- right
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            GetComponent<SpriteRenderer>().flipX = true;
-        }
-        // x > 0 -- left
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            GetComponent<SpriteRenderer>().flipX = false;
-        }
-        // down
-        else if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-        }
-        // up
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-        }
+        
 
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
         movement = movement.normalized;
+
+        if(movement.magnitude >= 0.1f)
+        {
+            isMoving = true;
+        }
+        else
+        {
+            isMoving = false;
+        }
+
+        animator.SetBool("isWalking", isMoving);
+
+        // x < 0 -- right
+        if (movement.x == -1f)
+        {
+            sprite.flipX = true;
+        }
+        // x > 0 -- left
+        else if (movement.x == 1f)
+        {
+            sprite.flipX = false;
+        }
 
         player.AddForce(movement * moveSpeed * Time.deltaTime, ForceMode2D.Impulse);
 
