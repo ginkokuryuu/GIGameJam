@@ -26,10 +26,11 @@ public class IndicatorsController : MonoBehaviour
     {
         civCount.text = civUpdate.ToString() + " / " + civStart.ToString();
         fireCount.text = fireUpdate.ToString() + " / " + fireStart.ToString();
+
+        if(civUpdate == civStart && fireUpdate == fireStart){
+            // level complete
+        }
+    
     }
 
-    string StringConverter(int count)
-    {
-        return count.ToString();
-    }
 }
