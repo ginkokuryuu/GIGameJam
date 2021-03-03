@@ -91,8 +91,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
-  m_fontSizeBase: 28
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.25142398, g: 0.4716981, b: 0.38677725, a: 0.42745098}
+  m_Color: {r: 0.57965463, g: 0.735849, b: 0.6777302, a: 0.78431374}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -743,7 +743,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 254.59998}
-  m_SizeDelta: {x: 195.5, y: 52.39}
+  m_SizeDelta: {x: 143.2, y: 31.79}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5800151177239257500
 CanvasRenderer:
@@ -766,7 +766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.28195086, g: 0.6037736, b: 0.6037736, a: 1}
+  m_Color: {r: 0.28195086, g: 0.6037736, b: 0.6037736, a: 0.78431374}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1093,7 +1093,7 @@ PrefabInstance:
     - target: {fileID: 3906092334075905636, guid: 1cfca5560f5b88a41a202f71aa9e4e59,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3906092334075905637, guid: 1cfca5560f5b88a41a202f71aa9e4e59,
         type: 3}
@@ -1323,7 +1323,7 @@ PrefabInstance:
     - target: {fileID: 8862910205573501815, guid: 29475de5ce3b9a241a1be13bfdee4ae6,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8862910205573501816, guid: 29475de5ce3b9a241a1be13bfdee4ae6,
         type: 3}
