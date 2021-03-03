@@ -23,4 +23,9 @@ public class SceneLoader : MonoBehaviour
             yield return null;
         }
     }
+
+    public void MainMenu()
+    {
+        StartCoroutine(LoadScene("MainMenu"));
+    }
 }

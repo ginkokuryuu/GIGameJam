@@ -19,7 +19,7 @@ public class Fire : MonoBehaviour
         GenerateFire();
 
         UnityEngine.Random.InitState((DateTime.Now.ToString("hh:mm:ss")).GetHashCode());
-
+        indicators = GameObject.Find("Indicators").GetComponentInChildren<IndicatorsController>();
     }
 
     // Update is called once per frame
@@ -50,6 +50,7 @@ public class Fire : MonoBehaviour
     void ExtinguishFire()
     {
         fireCount -= 1;
+        print(fireCount);
         if(fireCount == 0)
         {
             indicators.fireUpdate++;
