@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Fire : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class Fire : MonoBehaviour
     void Start()
     {
         GenerateFire();
+
+        UnityEngine.Random.InitState((DateTime.Now.ToString("hh:mm:ss")).GetHashCode());
     }
 
     // Update is called once per frame
@@ -35,7 +38,7 @@ public class Fire : MonoBehaviour
 
     void GenerateFire()
     {
-        fireCount = Random.Range(1, 3);
+        fireCount = UnityEngine.Random.Range(1, 3);
         for (int i = 0; i < fireCount; i++)
         {
             GameObject fire = Instantiate(firePrefab, transform.position + positions[i], transform.rotation, transform);
