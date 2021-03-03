@@ -9,14 +9,14 @@ public class NPCFollow : MonoBehaviour
     Transform target;
     public Collider2D collArea;
     bool follow = false;
+    IndicatorsController indicators;
     
-    // Start is called before the first frame update
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        indicators = GameObject.Find("Indicators").GetComponentInChildren<IndicatorsController>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(Vector2.Distance(transform.position, target.position) > stoppingDistance && follow){
@@ -40,6 +40,7 @@ public class NPCFollow : MonoBehaviour
 
         if(col.tag == "Exit"){
             follow = false;
+            indicators.civUpdate++;
             Destroy(this.gameObject);
         }
     }
