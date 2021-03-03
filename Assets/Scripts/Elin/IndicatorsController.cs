@@ -10,7 +10,7 @@ public class IndicatorsController : MonoBehaviour
     public int civUpdate = 0;
     public int fireUpdate = 0;
     int civStart;
-    int fireStart;
+    public int fireStart;
     void Start()
     {
         GameObject civilians = GameObject.Find("Civilians");
@@ -19,7 +19,6 @@ public class IndicatorsController : MonoBehaviour
         fireCount = GameObject.Find("Fire Count").GetComponentInChildren<TMP_Text>();
     
         civStart = civilians.transform.childCount;
-        fireStart = fire.transform.childCount;
         Debug.Log(civStart + " " + fireStart);
     }
 

@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.28195086, g: 0.6037736, b: 0.6037736, a: 1}
+  m_Color: {r: 0.28195086, g: 0.6037736, b: 0.6037736, a: 0.42745098}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -472,6 +472,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   civUpdate: 0
   fireUpdate: 0
+  fireStart: 0
 --- !u!1 &5800151176964875900
 GameObject:
   m_ObjectHideFlags: 0

@@ -25,6 +25,8 @@ public class FireSpawner : MonoBehaviour
     void SpawnFire()
     {
         int fireCount = UnityEngine.Random.Range(1, spawnCount);
+        IndicatorsController indicators = GameObject.Find("Indicators").GetComponentInChildren<IndicatorsController>();
+        indicators.fireStart = fireCount;
         for (int i = 0; i < fireCount; i++)
         {
             bool isDone = false;
